@@ -1,0 +1,13 @@
+clave,concepto,tipo,base,valor,fechaAlta,estatus
+001,Sueldo Base,Sueldo,Monto Fijo,0,2026-05-13,Activo
+020,Bono Productividad,Bono,% Sueldo,5,2026-05-13,Activo
+021,comision,Bono,Monto Fijo,8000.0,2026-05-13,Activo
+2,Horas extra,Percepción,% Sueldo,100,2026-05-13,Activo
+3,Bono puntualidad,Bono,% Sueldo,10,2026-05-13,Activo
+4,Bono asistencia,Bono,% Sueldo,8,2026-05-13,Activo
+5,Aguinaldo,Percepción,Monto Fijo,0,2026-05-13,Activo
+6,Prima vacacional,Percepción,% Sueldo,25,2026-05-13,Activo
+7,Vales de despensa,Percepción,Monto Fijo,1500,2026-05-13,Activo
+8,Apoyo transporte,Percepción,Monto Fijo,800,2026-05-13,Activo
+9,Bono desempeño,Bono,% Sueldo,12,2026-05-13,Activo
+10,Gratificación,Percepción,Monto Fijo,2000,2026-05-13,Activo

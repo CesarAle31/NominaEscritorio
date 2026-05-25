@@ -1,0 +1,12 @@
+clave,concepto,tipo,valor,tope,obligatoria,fechaAlta,estatus
+052,IMSS,Porcentaje,2.375,0,Si,2026-05-13,Activo
+045,ISR,Porcentaje,10,0,Si,2026-05-13,Activo
+64,Cuota sindical,Porcentaje,1,0,No,2026-05-13,Activo
+60,Fondo de ahorro,Porcentaje,5,0,No,2026-05-13,Activo
+61,Caja de ahorro,Porcentaje,5.0,0.0,No,2026-05-13,Activo
+62,Seguro de vida,Porcentaje,1.5,0,No,2026-05-13,Activo
+63,Seguro gastos médicos,Porcentaje,2,0,No,2026-05-13,Activo
+65,Pensión alimenticia,Porcentaje,20,0,No,2026-05-13,Activo
+66,Descuento por faltas,Porcentaje,100,0,No,2026-05-13,Activo
+67,Cuota cooperativa,Porcentaje,2,0,No,2026-05-13,Activo
+68,Seguro dental,Porcentaje,1,0,No,2026-05-13,Activo
