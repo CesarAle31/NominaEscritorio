@@ -10,7 +10,7 @@ public class NumeroALetrasUtil {
     };
 
     private static final String[] DECENAS = {
-            "", "", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa"
+            "", "", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa"
     };
 
     private static final String[] CENTENAS = {

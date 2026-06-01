@@ -175,16 +175,19 @@ public class CalculoNominaPanel extends JPanel {
         JButton btnXml = new JButton("Generar XML");
         JButton btnPdf = new JButton("Generar PDF");
         JButton btnCalcularTodos = new JButton("Calcular todos");
+        JButton btnGraficar = new JButton("Graficar salarios");
         btnCalcular.setText("Calcular empleado");
 
         btnCalcular.addActionListener(e -> calcularNominaEmpleadoSeleccionado());
         btnCalcularTodos.addActionListener(e -> calcularNominaTodos());
+        btnGraficar.addActionListener(e -> graficarSalarios());
         btnXml.addActionListener(e -> generarXML());
         btnPdf.addActionListener(e -> generarPDF());
 
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         bottomPanel.add(btnCalcular);
         bottomPanel.add(btnCalcularTodos);
+        bottomPanel.add(btnGraficar);
         bottomPanel.add(btnXml);
         bottomPanel.add(btnPdf);
 
@@ -427,7 +430,42 @@ public class CalculoNominaPanel extends JPanel {
         limpiarImportes();
         actualizarResumen(nominas);
 
-        JOptionPane.showMessageDialog(this, "Nomina calculada para " + nominas.size() + " empleados activos.");
+        JOptionPane.showMessageDialog(this, "Nomina calculada para " + nominas.size()
+                + " empleados activos.\nPuedes generar un PDF con una hoja por empleado.");
+    }
+
+    private void graficarSalarios() {
+        if (nominasActuales == null || nominasActuales.isEmpty()) {
+            JOptionPane.showMessageDialog(this,
+                    "Primero presiona \"Calcular todos\" para calcular la nomina de los empleados.");
+            return;
+        }
+
+        List<PieChartPanel.Rebanada> datos = new ArrayList<>();
+        for (NominaGenerada nomina : nominasActuales) {
+            if (nomina.getNeto() <= 0) {
+                continue;
+            }
+            Empleado empleado = nomina.getEmpleado();
+            String etiqueta = empleado.getId() + " - " + empleado.getNombre();
+            datos.add(new PieChartPanel.Rebanada(etiqueta, nomina.getNeto()));
+        }
+
+        if (datos.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No hay salarios mayores a 0 para graficar.");
+            return;
+        }
+
+        PieChartPanel grafica = new PieChartPanel();
+        grafica.setDatos(datos);
+        grafica.setPreferredSize(new Dimension(760, 460));
+
+        JDialog dialog = new JDialog(SwingUtilities.getWindowAncestor(this),
+                "Salario neto por empleado", Dialog.ModalityType.MODELESS);
+        dialog.add(grafica);
+        dialog.pack();
+        dialog.setLocationRelativeTo(this);
+        dialog.setVisible(true);
     }
 
     private NominaGenerada calcularNominaEmpleado(Empleado empleado,
@@ -685,17 +723,32 @@ public class CalculoNominaPanel extends JPanel {
     private void generarPDF() {
         detenerEdicionActiva();
 
-        if (nominaActual == null) {
+        if ((nominasActuales == null || nominasActuales.isEmpty()) && nominaActual == null) {
             JOptionPane.showMessageDialog(this, "Primero calcula la nÃ³mina");
             return;
         }
 
         try {
-            String ruta = "output/pdf/Nomina_" + nominaActual.getEmpleado().getId() + ".pdf";
-            pdfService.generarPDF(nominaActual, ruta);
+            String ruta;
+            if (nominasActuales != null && nominasActuales.size() > 1) {
+                ruta = "output/pdf/Nominas_" + limpiarNombreArchivo(obtenerPeriodoSeleccionado()) + ".pdf";
+                pdfService.generarPDF(nominasActuales, ruta);
+            } else {
+                NominaGenerada nomina = nominaActual != null ? nominaActual : nominasActuales.get(0);
+                ruta = "output/pdf/Nomina_" + nomina.getEmpleado().getId() + ".pdf";
+                pdfService.generarPDF(nomina, ruta);
+            }
             JOptionPane.showMessageDialog(this, "PDF generado en:\n" + ruta);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error al generar PDF: " + e.getMessage());
         }
+    }
+
+    private String limpiarNombreArchivo(String texto) {
+        String valor = texto == null ? "" : texto.trim();
+        if (valor.isEmpty()) {
+            return "Todos";
+        }
+        return valor.replaceAll("[^a-zA-Z0-9_-]+", "_");
     }
 }
