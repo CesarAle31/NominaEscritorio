@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<reporte generado="2026-04-23 10:04:37" modulo="percepciones">
+  <registros>
+    <registro>
+      <clave>001</clave>
+      <concepto>Sueldo Base</concepto>
+      <tipo>Sueldo</tipo>
+      <base>Monto Fijo</base>
+      <monto>0.0</monto>
+      <estatus>Activo</estatus>
+    </registro>
+    <registro>
+      <clave>020</clave>
+      <concepto>Bono Productividad</concepto>
+      <tipo>Bono</tipo>
+      <base>% Sueldo</base>
+      <monto>5.0</monto>
+      <estatus>Activo</estatus>
+    </registro>
+    <registro>
+      <clave>021</clave>
+      <concepto>comision</concepto>
+      <tipo>Bono</tipo>
+      <base>Monto Fijo</base>
+      <monto>8000.0</monto>
+      <estatus>Activo</estatus>
+    </registro>
+  </registros>
+</reporte>

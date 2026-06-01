@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<reporte generado="2026-04-23 10:00:28" modulo="empleados">
+  <registros>
+    <registro>
+      <id>E-001</id>
+      <nombre>Juan Perez</nombre>
+      <rfc>PEPJ800101XXX</rfc>
+      <curp>PEPJ800101HDFXXX01</curp>
+      <puesto>Supervisor</puesto>
+      <plaza>QA-01</plaza>
+      <departamento>Calidad</departamento>
+      <sueldo>15000.0</sueldo>
+      <fecha_ingreso>2025-01-10</fecha_ingreso>
+      <estatus>Activo</estatus>
+    </registro>
+    <registro>
+      <id>E-002</id>
+      <nombre>Maria Lopez</nombre>
+      <rfc>LOPM850202XXX</rfc>
+      <curp>LOPM850202MDFXXX02</curp>
+      <puesto>Administrador</puesto>
+      <plaza>AD-01</plaza>
+      <departamento>Administracion</departamento>
+      <sueldo>20000.0</sueldo>
+      <fecha_ingreso>2025-01-15</fecha_ingreso>
+      <estatus>Activo</estatus>
+    </registro>
+    <registro>
+      <id>e-003</id>
+      <nombre>cesar</nombre>
+      <rfc>adsasd</rfc>
+      <curp>asdasdasd</curp>
+      <puesto>administrador</puesto>
+      <plaza>qa-01</plaza>
+      <departamento>calidad</departamento>
+      <sueldo>7000.0</sueldo>
+      <fecha_ingreso>2025-08-31</fecha_ingreso>
+      <estatus>Activo</estatus>
+    </registro>
+  </registros>
+</reporte>

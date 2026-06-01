@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Comprobante TipoDeComprobante="N" SubTotal="18200.00" Total="14855.75">
+  <Receptor NumEmpleado="E-004" Nombre="Alejandro" Rfc="MACC040831436" Curp="MACC040831HOCRHSA5" />
+  <Nomina FechaInicialPago="2025-01-01" FechaFinalPago="2025-01-07">
+    <Percepciones TotalGravado="18200.00">
+      <Percepcion Clave="001" Concepto="Sueldo Base" Importe="7500.00" />
+      <Percepcion Clave="PLZ-QA-01" Concepto="Bono Calidad" Importe="1200.00" />
+      <Percepcion Clave="021" Concepto="comision" Importe="2000.00" />
+      <Percepcion Clave="2" Concepto="Horas extra" Importe="7500.00" />
+    </Percepciones>
+    <Deducciones TotalOtrasDeducciones="3344.25">
+      <Deduccion Clave="052" Concepto="IMSS" Importe="432.25" />
+      <Deduccion Clave="045" Concepto="ISR" Importe="1820.00" />
+      <Deduccion Clave="64" Concepto="Cuota sindical" Importe="182.00" />
+      <Deduccion Clave="60" Concepto="Fondo de ahorro" Importe="910.00" />
+    </Deducciones>
+  </Nomina>
+</Comprobante>

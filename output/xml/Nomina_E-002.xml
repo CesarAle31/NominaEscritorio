@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Comprobante TipoDeComprobante="N" SubTotal="10500.00" Total="9200.63">
+  <Receptor NumEmpleado="E-002" Nombre="Maria Lopez" Rfc="LOPM850202XXX" Curp="LOPM850202MDFXXX02" />
+  <Nomina FechaInicialPago="2025-05-01" FechaFinalPago="2025-05-15">
+    <Percepciones TotalGravado="10500.00">
+      <Percepcion Clave="001" Concepto="Sueldo Base" Importe="10000.00" />
+      <Percepcion Clave="020" Concepto="Bono Productividad" Importe="500.00" />
+    </Percepciones>
+    <Deducciones TotalOtrasDeducciones="1299.38">
+      <Deduccion Clave="052" Concepto="IMSS" Importe="249.38" />
+      <Deduccion Clave="045" Concepto="ISR" Importe="1050.00" />
+    </Deducciones>
+  </Nomina>
+</Comprobante>
